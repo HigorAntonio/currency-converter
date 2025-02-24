@@ -1,0 +1,70 @@
+.currency-select {
+  width: 100%;
+  appearance: none;
+  position: relative;
+
+  padding: calc(16rem / 16) calc(20rem / 16);
+  padding-right: calc(48rem / 16);
+  border-radius: calc(8rem / 16);
+  background-color: var(--blue-200);
+  border: calc(1rem / 16) solid var(--blue-400);
+
+  outline: none;
+}
+
+.currency-select:focus {
+  border-color: var(--blue-700);
+}
+
+.currency-select:hover {
+  cursor: pointer;
+}
+
+.currency-select-text {
+  color: var(--blue-900);
+
+  font-family: Inter;
+  font-size: calc(16rem / 16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(20rem / 16);
+}
+
+.currency-select-icon {
+  width: calc(20rem / 16);
+  height: calc(20rem / 16);
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: calc(20rem / 16);
+  background-position: center;
+}
+
+.icon-caret-down {
+  background: url("../../assets/CaretDown.png") no-repeat;
+}
+
+.icon-caret-down-focused {
+  background: url("../../assets/CaretDownFocused.png") no-repeat;
+}
+
+.icon-caret-up {
+  background: url("../../assets/CaretUp.png") no-repeat;
+}
+
+.icon-caret-up-focused {
+  background: url("../../assets/CaretUpFocused.png") no-repeat;
+}
+
+.currency-select-options {
+  width: 100%;
+  padding: calc(8rem / 16) 0;
+  border-radius: calc(8rem / 16);
+  border: calc(1rem / 16) solid var(--blue-400);
+  background-color: var(--blue-300);
+
+  position: absolute;
+  left: 0;
+  bottom: calc(-8rem / 16);
+  transform: translateY(100%);
+}

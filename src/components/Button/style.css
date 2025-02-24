@@ -1,0 +1,29 @@
+.btn {
+  width: 100%;
+  padding: calc(16rem / 16) calc(20rem / 16);
+  border-radius: calc(8rem / 16);
+  background-color: var(--blue-600);
+  border: none;
+
+  color: var(--white);
+  text-align: center;
+
+  font-family: Inter;
+  font-size: calc(16rem / 16);
+  font-style: normal;
+  font-weight: 600;
+  line-height: calc(20rem / 16);
+
+  outline: none;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+  background-color: var(--blue-700);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 50%;
+}

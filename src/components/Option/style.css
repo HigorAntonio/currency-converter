@@ -1,0 +1,19 @@
+.currency-option {
+  padding: calc(12rem / 16) calc(20rem / 16);
+
+  color: var(--blue-900, #b2b8de);
+
+  font-family: Inter;
+  font-size: calc(16rem / 16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(20rem / 16);
+
+  outline: none;
+}
+
+.currency-option:hover,
+.currency-option:focus {
+  cursor: pointer;
+  background-color: var(--blue-500);
+}

@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: calc(16rem / 16);
+  padding-top: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: url("./assets/Background.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  height: calc(143rem / 16);
+  padding-top: calc(64rem / 16);
+  padding-bottom: calc(50rem / 16);
+}
+
+.logo {
+  width: calc(138rem / 16);
+}
+
+.form {
+  width: min(100%, calc(480rem / 16));
+  height: fit-content;
+  padding: calc(56rem / 16) calc(64rem / 16);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(48rem / 16);
+
+  border-radius: calc(24rem / 16);
+  border: calc(1rem / 16) solid var(--blue-500);
+
+  background-color: var(--blue-300);
+}
+
+.fields {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(20rem / 16);
+}

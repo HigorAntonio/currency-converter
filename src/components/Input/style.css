@@ -1,0 +1,27 @@
+.currency-input {
+  width: 100%;
+  padding: calc(16rem / 16) calc(20rem / 16);
+  border-radius: calc(8rem / 16);
+  background-color: var(--blue-200);
+  border: calc(1rem / 16) solid var(--blue-400);
+
+  color: var(--white);
+
+  font-family: Inter;
+  font-size: calc(16rem / 16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(20rem / 16);
+
+  caret-color: var(--blue-700);
+
+  outline: none;
+}
+
+.currency-input::placeholder {
+  color: var(--blue-900);
+}
+
+.currency-input:focus {
+  border-color: var(--blue-700);
+}
