@@ -15,8 +15,8 @@ function App() {
       </header>
       <div className="form">
         <div className="fields">
-          <Input />
-          <Select>
+          <Input label="Valor" />
+          <Select label="Moeda">
             <Option>Dólar americano</Option>
             <Option>Euro</Option>
             <Option>Iene japonês</Option>

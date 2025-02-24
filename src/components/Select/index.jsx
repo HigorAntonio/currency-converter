@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 import "./style.css";
 
-function Select({ children, placeholder = "Selecione a moeda" }) {
+function Select({ label, placeholder = "Selecione a moeda", children }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -24,6 +24,14 @@ function Select({ children, placeholder = "Selecione a moeda" }) {
     document.addEventListener("focusin", checkSelectFocus);
     document.addEventListener("focusout", checkSelectFocus);
 
+    function handlePressEscapeWithOpenSelect(event) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", handlePressEscapeWithOpenSelect);
+
     return () => {
       document.removeEventListener(
         "mousedown",
@@ -32,6 +40,8 @@ function Select({ children, placeholder = "Selecione a moeda" }) {
 
       document.removeEventListener("focusin", checkSelectFocus);
       document.removeEventListener("focusout", checkSelectFocus);
+
+      document.removeEventListener("keydown", handlePressEscapeWithOpenSelect);
     };
   }, []);
 
@@ -55,30 +65,33 @@ function Select({ children, placeholder = "Selecione a moeda" }) {
   }
 
   return (
-    <div
-      className="currency-select"
-      onClick={toggleSelect}
-      onKeyDown={handleSelectKeyDown}
-      tabIndex="0"
-      ref={selectRef}
-    >
-      <p className="currency-select-text">{placeholder}</p>
+    <div className="select-wrapper">
+      <label className="currency-select-label">{label}</label>
       <div
-        className={`currency-select-icon ${
-          isOpen
-            ? isFocused
-              ? "icon-caret-up-focused"
-              : "icon-caret-up"
-            : isFocused
-            ? "icon-caret-down-focused"
-            : "icon-caret-down"
-        }`}
-      ></div>
-      <div
-        className={`currency-select-options ${!isOpen && "display-none"}`}
-        onClick={handleOptionOnClick}
+        className="currency-select"
+        onClick={toggleSelect}
+        onKeyDown={handleSelectKeyDown}
+        tabIndex="0"
+        ref={selectRef}
       >
-        {children}
+        <p className="currency-select-text">{placeholder}</p>
+        <div
+          className={`currency-select-icon ${
+            isOpen
+              ? isFocused
+                ? "icon-caret-up-focused"
+                : "icon-caret-up"
+              : isFocused
+              ? "icon-caret-down-focused"
+              : "icon-caret-down"
+          }`}
+        ></div>
+        <div
+          className={`currency-select-options ${!isOpen && "display-none"}`}
+          onClick={handleOptionOnClick}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
