@@ -51,6 +51,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: calc(20rem / 16);
+
+  user-select: none;
 }
 
 .currency-select-icon {
